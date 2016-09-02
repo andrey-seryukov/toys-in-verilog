@@ -74,12 +74,12 @@ always @(posedge clk_a or negedge reset_n) begin
   if (~reset_n) begin
     count_a <= 0;
     g0 <= 0;
-	g1 <= 0;
+    g1 <= 0;
   end
   else begin
     g0 <= (D == 0 ? b2g16(count[W-1:0]) : b2g16({D0, count[W-1:0]}));
-	g1 <= g0;
-	count_a <= (D == 0 ? g2b16(g1[W-1:0]) : g2b16({D0, g1[W-1:0]}));
+    g1 <= g0;
+    count_a <= (D == 0 ? g2b16(g1[W-1:0]) : g2b16({D0, g1[W-1:0]}));
   end
 end
 
